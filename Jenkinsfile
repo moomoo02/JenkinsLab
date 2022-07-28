@@ -5,6 +5,11 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
+
+                script {
+                    def test = 5 + 5
+                    echo test
+                }
             }
         }
         stage('Test') {
