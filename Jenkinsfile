@@ -8,7 +8,7 @@ pipeline {
 
                 script {
                     def test = 5 + 5
-                    echo test
+                    echo ${test}
                 }
             }
         }
