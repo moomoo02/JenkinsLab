@@ -23,12 +23,12 @@ pipeline {
             }
         }
     }
-    post {
-        success {
-            echo "Success!"
-        }
-        failture {
-            echo "Failed :("
-        }
-    }
+    // post {
+    //     success {
+    //         echo "Success!"
+    //     }
+    //     failture {
+    //         echo "Failed :("
+    //     }
+    // }
 }
