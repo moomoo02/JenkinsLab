@@ -5,11 +5,10 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building..'
-
-                script {
-                    int test = 5 + 5;
-                    println(test);
+                retry(3){
+                    sh 'node --version'
                 }
+                
             }
         }
         stage('Test') {
@@ -22,6 +21,14 @@ pipeline {
             steps {
                 echo 'Deploying....'
             }
+        }
+    }
+    post {
+        success {
+            echo "Success!"
+        }
+        failture {
+            echo "Failed :("
         }
     }
 }
