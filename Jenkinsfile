@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Building Docker Image..'
 
-                sh 'docker build -t react:latest .'
+                sh 'docker build -t moomoo02/demo-app .'
                 
             }
         }
@@ -17,11 +17,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                echo 'Pushing docker image to DockerHub...'
                 withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'dockerHubPass')]) {
                     sh "docker login -u moomoo02 -p ${dockerHubPass}"
                 }
-                sh 'docker push react:latest'
+                sh 'docker push moomoo02/demo-app'
             }
         }
     }
