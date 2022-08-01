@@ -18,6 +18,10 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
+                withCredentials([string(credentialsId: 'dockerhub-pass', variable: 'dockerHubPass')]) {
+                    sh "docker login -u moomoo02 -p ${dockerHubPass}"
+                }
+                sh 'docker push react:latest'
             }
         }
     }
