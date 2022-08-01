@@ -1,12 +1,6 @@
 pipeline {
-    agent {
-        docker {
-            image 'react:latest'
-        }
-    }
-
+    agent any
     stages {
-        stage('SCM')
         stage('Build') {
             steps {
                 echo 'Building Docker Image..'
