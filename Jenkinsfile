@@ -9,7 +9,7 @@ pipeline {
         stage('SCM')
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building Docker Image..'
 
                 sh 'docker build -t react:latest .'
                 
