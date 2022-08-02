@@ -5,7 +5,7 @@ pipeline {
             steps {
                 echo 'Building Docker Image..'
                 sh 'export DOCKER_BUILDKIT=0'
-                export 'COMPOSE_DOCKER_CLI_BUILD=0'
+                sh 'export COMPOSE_DOCKER_CLI_BUILD=0'
                 sh 'docker build -t moomoo02/demo-app .'
                 
             }
