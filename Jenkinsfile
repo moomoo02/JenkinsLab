@@ -27,9 +27,9 @@ pipeline {
             steps {
                 echo 'Deploying to AWS...'
 
-                //def dockerRun = 'docker run -p 3000:3000 -d -name demo-app moomoo02/demo-app'
-                sshagent(['aws-key']) {
-                    sh "ssh -o StrictHostKeyChecking=no ec2-user@ec2-18-237-237-1.us-west-2.compute.amazonaws.com ${dockerRun}"
+                def dockerRun = 'docker run -p 3000:3000 -d -name demo-app moomoo02/demo-app'
+                sshagent([]) {
+                    sh "ssh -o StrictHostKeyChecking=no root@198.74.61.62 ${dockerRun}"
                 }
             }
         }
