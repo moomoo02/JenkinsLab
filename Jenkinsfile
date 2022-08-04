@@ -29,7 +29,7 @@ pipeline {
 
                 //def dockerRun = 'docker run -p 3000:3000 -d -name demo-app moomoo02/demo-app'
                 sshagent(['vince']) {
-                    sh "ssh -o StrictHostKeyChecking=no root@198.74.61.62"
+                    sh "ssh -o StrictHostKeyChecking=no root@45.79.157.189"
                     // sh "ssh -o StrictHostKeyChecking=no root@198.74.61.62 ${dockerRun}"
                 }
                 
